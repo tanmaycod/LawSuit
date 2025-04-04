@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply bg-gradient-to-r from-gray-900 via-gray-700 to-black text-white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: ripple-animation 0.5s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.click-animation {
+  animation: click-scale 0.3s ease-in-out;
+}
+
+@keyframes click-scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+motion-button:hover::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0));
+  z-index: -1;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+button:hover {
+  animation: glow-animation 1.5s infinite;
+}
+
+@keyframes glow-animation {
+  0%, 100% {
+    box-shadow: 0px 4px 20px rgba(255, 105, 180, 0.6);
+  }
+  50% {
+    box-shadow: 0px 4px 30px rgba(255, 105, 180, 1);
+  }
+}
+
+ .service-card {
+    position: relative;
+    padding: 6px;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 4px dashed transparent;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    z-index: -1;
+    border-radius: 28px;
+    background: linear-gradient(45deg, #ffcc00, #ff6699, #33ccff, #66ff66);
+    background-size: 300% 300%;
+    animation: border-animate 6s linear infinite;
+  }
+
+  @keyframes border-animate {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    iframe {
+      width: 100%;
+      height: 60vh; /* Adjust height for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    iframe {
+      height: 50vh; /* Smaller height for very small screens */
+    }
+  }
+  
+
+ 
+
+/* Typing Effect */
+.dynamic-text span {
+  display: inline-block;
+  animation: typing 3s steps(20, end) infinite;
+}
+
+@keyframes typing {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  40%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Particle Background */
+#particleCanvas {
+  background: transparent;
+}
+
+/* Typing Animation */
+.typing-animation::after {
+  content: "|";
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+
+/* Ripple Effect */
+.animate-ripple {
+  animation: ripple 1.5s infinite;
+}
+@keyframes ripple {
+  0% {
+      transform: scale(0);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(4);
+      opacity: 0;
+  }
+}
+
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marquee-reverse 15s linear infinite;
+}
+@keyframes marquee {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+@keyframes marquee-reverse {
+  0% {
+      transform: translateX(-50%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.hover\\:scale-101:hover {
+  transform: scale(1.01);
+}
+@media (min-width: 1024px) {
+  .max-w-7xl {
+    max-width: 72rem;
+  }
+}

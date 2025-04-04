@@ -1,0 +1,132 @@
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.main > div {
+    position: absolute;
+    will-change: transform;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff7675, #d63031);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+    opacity: 0.85;
+    transition: transform 0.3s ease, background 0.3s ease, filter 0.5s ease-in-out;
+    filter: drop-shadow(0px 0px 20px rgba(255, 100, 100, 0.7));
+}
+
+.main > div:nth-child(1) {
+    width: 55px;
+    height: 55px;
+}
+
+.main > div:nth-child(2) {
+    width: 110px;
+    height: 110px;
+}
+
+.main > div:nth-child(3) {
+    width: 80px;
+    height: 80px;
+}
+
+.main > div:nth-child(4) {
+    width: 130px;
+    height: 130px;
+}
+
+.main > div:hover {
+    transform: scale(1.15) rotate(15deg);
+    background: radial-gradient(circle, #ffca28, #ff5252);
+    filter: drop-shadow(0px 0px 30px rgba(255, 165, 0, 0.8));
+}
+
+.main > div::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    animation: pulse 1.8s infinite;
+}
+
+.main > div:nth-child(2)::after {
+    top: 40px;
+    left: 40px;
+    width: 30px;
+    height: 30px;
+}
+
+.main > div:nth-child(3)::after {
+    top: 30px;
+    left: 30px;
+    width: 25px;
+    height: 25px;
+}
+
+.main > div:nth-child(4)::after {
+    top: 50px;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.4); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: url("#blob");
+    overflow: hidden;
+    background: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* ===============================
+   Additional CSS for enhanced effects
+   =============================== */
+
+/* Ripple Effect on Click */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: rippleEffect 0.8s ease-out forwards;
+}
+
+@keyframes rippleEffect {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(10);
+    }
+}
+
+/* Slightly faster transitions on smaller screens */
+@media (max-width: 768px) {
+    .main > div {
+        transition: transform 0.2s ease, background 0.2s ease, filter 0.3s ease-in-out;
+    }
+}
