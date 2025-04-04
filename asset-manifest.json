@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/LawSuit/static/css/main.9fcb42a5.css",
-    "main.js": "/LawSuit/static/js/main.156d4d1d.js",
+    "main.css": "/LawSuit/static/css/main.a3464c05.css",
+    "main.js": "/LawSuit/static/js/main.24bca7e9.js",
     "static/js/488.bb55d5e3.chunk.js": "/LawSuit/static/js/488.bb55d5e3.chunk.js",
     "index.html": "/LawSuit/index.html",
-    "main.9fcb42a5.css.map": "/LawSuit/static/css/main.9fcb42a5.css.map",
-    "main.156d4d1d.js.map": "/LawSuit/static/js/main.156d4d1d.js.map",
+    "main.a3464c05.css.map": "/LawSuit/static/css/main.a3464c05.css.map",
+    "main.24bca7e9.js.map": "/LawSuit/static/js/main.24bca7e9.js.map",
     "488.bb55d5e3.chunk.js.map": "/LawSuit/static/js/488.bb55d5e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fcb42a5.css",
-    "static/js/main.156d4d1d.js"
+    "static/css/main.a3464c05.css",
+    "static/js/main.24bca7e9.js"
   ]
 }
